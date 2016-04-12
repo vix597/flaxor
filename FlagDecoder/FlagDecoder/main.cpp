@@ -29,6 +29,7 @@ int main(int argc, char ** argv) {
 	}
 	else {
 		cerr << "Invalid option: \"" << argv[1] << "\". Expected \"encode\" or \"decode\"\n";
+		cerr << "For info. See: https://github.com/vix597/flaxor \n";
 		return 1;
 	}
 	return 0;
