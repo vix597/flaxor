@@ -18,6 +18,7 @@ uint8_t * getMacAddress();
 int main(int argc, char ** argv) {
 	if (argc < 3) {
 		cerr << "Usage: " << argv[0] << " <encode | decode> <file>\n";
+		cerr << "For info. See: https://github.com/vix597/flaxor \n";
 		return 1;
 	}
 
