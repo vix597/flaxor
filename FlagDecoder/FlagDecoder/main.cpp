@@ -71,6 +71,7 @@ void encode_decode(const string& path, const string& mode) {
 
 	fwrite(buf, sizeof(uint8_t), size, f);
 	fclose(f);
+	cout << "Flag written to: " << path << mode << "\n";
 	return;
 }
 
