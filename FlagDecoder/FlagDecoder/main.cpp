@@ -16,8 +16,8 @@ uint8_t * getMacAddress();
 
 int main(int argc, char ** argv) {
 	if (argc < 3) {
-		cerr << "Usage: " << argv[0] << " <encode | decode> <file>\n";
-		cerr << "For info. See: https://github.com/vix597/flaxor \n";
+		cout << "Usage: " << argv[0] << " <encode | decode> <file>\n";
+		cout << "For info. See: https://github.com/vix597/flaxor \n";
 		return 1;
 	}
 
@@ -28,8 +28,8 @@ int main(int argc, char ** argv) {
 		encode_decode(argv[2],".decode");
 	}
 	else {
-		cerr << "Invalid option: \"" << argv[1] << "\". Expected \"encode\" or \"decode\"\n";
-		cerr << "For info. See: https://github.com/vix597/flaxor \n";
+		cout << "Invalid option: \"" << argv[1] << "\". Expected \"encode\" or \"decode\"\n";
+		cout << "For info. See: https://github.com/vix597/flaxor \n";
 		return 1;
 	}
 	return 0;
@@ -37,7 +37,7 @@ int main(int argc, char ** argv) {
 
 void encode_decode(const string& path, const string& mode) {
 	if (!PathFileExistsA(path.c_str())) {
-		cerr << "Path: " << path << " does not exist. Cannot encode\n";
+		cout << "Path: " << path << " does not exist. Cannot encode\n";
 		exit(1);
 	}
 
@@ -45,7 +45,7 @@ void encode_decode(const string& path, const string& mode) {
 
 	errno_t err = fopen_s(&f, path.c_str(), "rb");
 	if (err) {
-		cerr << "Unable to open " << path << " for reading. Errno: " << err << "\n";
+		cout << "Unable to open " << path << " for reading. Errno: " << err << "\n";
 		exit(1);
 	}
 
@@ -65,7 +65,7 @@ void encode_decode(const string& path, const string& mode) {
 
 	err = fopen_s(&f, (path + mode).c_str(), "wb");
 	if (err) {
-		cerr << "Unable to open " << path << " for writing. Errno: " << err << "\n";
+		cout << "Unable to open " << path << " for writing. Errno: " << err << "\n";
 		exit(1);
 	}
 
